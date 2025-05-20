@@ -1,8 +1,46 @@
 @use "../core/variables" as vars;
 
-body {
-  padding: 2rem;
-  height: 100vh;
-  background-color: vars.$color-bg;
-  font-family: vars.$font-main;
+.main {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.sidebar {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.listingSection {
+  flex: 1;
+}
+
+.anime__list {
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  list-style-type: none;
+  text-align: center;
+
+  @media (width > 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.anime__list .favourite {
+  background-color: rgb(93, 12, 93);
+  border: solid 5px rgb(243, 32, 236);
+}
+.favouriteSection {
+  background-color: #dddddd;
 }

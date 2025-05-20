@@ -1,13 +1,25 @@
-<main>
-  <form action="/signup" method="get">
-    <input
-      class="js_searcher"
-      placeholder="Buscar serie"
-      id="Buscar"
-      type="text"
-    />
-    <input type="submit" value="Buscar" class="js_btn_search" />
-    <button class="js_btn_reset">Reset</button>
-  </form>
-  <ul class="js_anime_listUl"></ul>
+<main class="main">
+  <aside class="sidebar">
+    <form action="/signup" method="get">
+      <input
+        class="js_searcher"
+        placeholder="Buscar serie"
+        id="Buscar"
+        type="text"
+      />
+      <input type="submit" value="Buscar" class="js_btn_search" />
+      <button class="js_btn_reset">Reset</button>
+    </form>
+
+    <section class="favouriteSection">
+      <h2 class="title">Mis favoritas</h2>
+      <ul class="js_favouritesUl anime__list"></ul>
+    </section>
+  </aside>
+
+  <section class="listingSection">
+    <h2 class="title">Listado de todas las series</h2>
+    <ul id="animeUl" class="js_animeUl"></ul>
+    <ul class="js_anime_listUl anime__list"></ul>
+  </section>
 </main>
