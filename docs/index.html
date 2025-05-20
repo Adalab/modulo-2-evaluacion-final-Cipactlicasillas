@@ -10,7 +10,7 @@
     />
     
     <link rel="icon" href="./images/favicon.png" />
-    <link rel="stylesheet" href="./assets/index-d62efb39.css">
+    <link rel="stylesheet" href="./assets/index-71694486.css">
   </head>
 
   <body>
@@ -19,18 +19,30 @@
   <h1>Buscador de series de Anime</h1>
 </header>
 
-      <main>
-  <form action="/signup" method="get">
-    <input
-      class="js_searcher"
-      placeholder="Buscar serie"
-      id="Buscar"
-      type="text"
-    />
-    <input type="submit" value="Buscar" class="js_btn_search" />
-    <button class="js_btn_reset">Reset</button>
-  </form>
-  <ul class="js_anime_listUl"></ul>
+      <main class="main">
+  <aside class="sidebar">
+    <form action="/signup" method="get">
+      <input
+        class="js_searcher"
+        placeholder="Buscar serie"
+        id="Buscar"
+        type="text"
+      />
+      <input type="submit" value="Buscar" class="js_btn_search" />
+      <button class="js_btn_reset">Reset</button>
+    </form>
+
+    <section class="favouriteSection">
+      <h2 class="title">Mis favoritas</h2>
+      <ul class="js_favouritesUl anime__list"></ul>
+    </section>
+  </aside>
+
+  <section class="listingSection">
+    <h2 class="title">Listado de todas las series</h2>
+    <ul id="animeUl" class="js_animeUl"></ul>
+    <ul class="js_anime_listUl anime__list"></ul>
+  </section>
 </main>
 
       <footer></footer>
