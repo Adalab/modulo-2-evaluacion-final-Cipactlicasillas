@@ -32,7 +32,7 @@ function renderallAnimes() {
   animeListUl.innerHTML = html;
 }
 
-fetch("https://api.jikan.moe/v4/anime ")
+fetch("https://api.jikan.moe/v4/anime")
   .then((res) => res.json())
   .then((data) => {
     allAnimes = data.data;
