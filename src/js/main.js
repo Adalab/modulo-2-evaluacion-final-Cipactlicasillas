@@ -19,67 +19,30 @@ btnReset.addEventListener("click", (event) => {
 
 const animeListUl = document.querySelector(".js_anime_listUl");
 
-const allAnimes = [
-  {
-    title: "Cowboy Bebop",
-    images: {
-      jpg: {
-        image_url: "https://cdn.myanimelist.net/images/anime/4/19644.jpg",
-      },
-    },
-  },
-  {
-    title: "Cowboy Bebop: Tengoku no Tobira",
-    images: {
-      jpg: {
-        image_url: "https://cdn.myanimelist.net/images/anime/1439/93480.jpg",
-      },
-    },
-  },
-  {
-    title: "Bouken Ou Beet",
-    images: {
-      jpg: {
-        image_url: "https://cdn.myanimelist.net/images/anime/7/21569.jpg",
-      },
-    },
-  },
-  {
-    title: "Eyeshield 21",
-    images: {
-      jpg: {
-        image_url: "https://cdn.myanimelist.net/images/anime/1079/133529.jpg",
-      },
-    },
-  },
-  {
-    title: "Hachimitsu to Clover",
-    images: {
-      jpg: {
-        image_url: "https://cdn.myanimelist.net/images/anime/1301/133577.jpg",
-      },
-    },
-  },
-  {
-    title: "Hungry Heart: Wild Striker",
-    images: {
-      jpg: {
-        image_url: "https://cdn.myanimelist.net/images/anime/12/49655.jpg",
-      },
-    },
-  },
-];
+let allAnimes = [];
+
 function renderOneAnime(oneAnime) {
   const html = `
 <li class="js_anime_Item">
   <h2 class="js_title">${oneAnime.title}</h2>
   <img class="js_image" src="${oneAnime.images.jpg.image_url}" alt="imagen de anime" />
 </li>`;
-  animeListUl.innerHTML += html;
-  return;
-  html;
+  return html;
 }
 
-for (const oneAnime of allAnimes) {
-  renderOneAnime(oneAnime);
+function renderallAnimes() {
+  let html = "";
+  for (const oneAnime of allAnimes) {
+    html += renderOneAnime(oneAnime);
+  }
+
+  animeListUl.innerHTML = html;
 }
+//renderallAnimes();
+fetch("https://api.jikan.moe/v4/anime ")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data.data);
+    allAnimes = data.data;
+    renderallAnimes();
+  });
