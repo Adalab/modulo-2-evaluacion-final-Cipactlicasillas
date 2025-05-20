@@ -4,18 +4,11 @@ const inputSearch = document.querySelector(".js_searcher");
 const btnSearch = document.querySelector(".js_btn_search");
 const btnReset = document.querySelector(".js_btn_reset");
 
-inputSearch.addEventListener("click", (event) => {
-  event.preventDefault();
-});
-btnSearch.addEventListener("click", (event) => {
-  event.preventDefault();
-  const valueName = inputSearch.value;
-  console.log("pruebasss");
-});
 btnReset.addEventListener("click", (event) => {
   event.preventDefault();
-  const valueSearch = (inputSearch.value = "");
+  inputSearch.value = "";
 });
+btnSearch.addEventListener("click", handleClickBtnSearch);
 
 const animeListUl = document.querySelector(".js_anime_listUl");
 
@@ -38,11 +31,23 @@ function renderallAnimes() {
 
   animeListUl.innerHTML = html;
 }
-//renderallAnimes();
+
 fetch("https://api.jikan.moe/v4/anime ")
   .then((res) => res.json())
   .then((data) => {
-    console.log(data.data);
     allAnimes = data.data;
     renderallAnimes();
   });
+
+function handleClickBtnSearch(ev) {
+  ev.preventDefault();
+
+  const name = inputSearch.value;
+
+  fetch(`https://api.jikan.moe/v4/anime?q=${name}`)
+    .then((res) => res.json())
+    .then((data) => {
+      allAnimes = data.data;
+      renderallAnimes();
+    });
+}
