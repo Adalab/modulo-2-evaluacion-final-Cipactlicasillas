@@ -5,6 +5,7 @@
   gap: 2rem;
   align-items: flex-start;
   width: 100%;
+  background-color: rgba(150, 86, 179, 0.761);
 }
 
 .sidebar {
@@ -12,18 +13,55 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-content: flex-start;
 }
-
-.searchForm {
+.searcher {
+  margin-left: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 0.5rem;
 }
 
+.searcherGen {
+  background-color: #3a1a497e;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+.btnSearch,
+.btnReset {
+  background-color: #3a1a497e;
+  color: #0a0410;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  width: 100px;
+}
 .listingSection {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 5px#512468;
+  border-radius: 1rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
 }
 
+.title--accented {
+  background-color: #512468b0;
+  color: #0a0410;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  border-radius: 0.5rem;
+}
 .anime__list {
   margin: 2rem;
   display: grid;
@@ -38,9 +76,35 @@
 }
 
 .anime__list .favourite {
-  background-color: rgb(93, 12, 93);
-  border: solid 5px rgb(243, 32, 236);
+  background-color: #2f0c40;
+  border: solid 5px #c37fe5;
+  border-radius: 1rem;
+  color: #c37fe5;
+  padding: 1rem;
 }
 .favouriteSection {
-  background-color: #dddddd;
+  background-color: #3a145c48;
+  border: solid 5px #3a145c;
+  border-radius: 1rem;
+  color: #0a0410;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-left: 2rem;
+  font-size: 0.8rem;
+}
+
+.title {
+  align-items: center;
+  justify-content: center;
+}
+.title--highlight {
+  background-color: #3a145c7a;
+  color: #0a0410;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  border-radius: 0.5rem;
 }
