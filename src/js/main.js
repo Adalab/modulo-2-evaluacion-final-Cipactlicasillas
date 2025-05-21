@@ -6,19 +6,27 @@ const btnReset = document.querySelector(".js_btn_reset");
 const animeListUl = document.querySelector(".js_anime_listUl");
 const favouritesUl = document.querySelector(".js_favouritesUl");
 
+btnSearch.addEventListener("click", handleClickBtnSearch);
+
 btnReset.addEventListener("click", (event) => {
   event.preventDefault();
   inputSearch.value = "";
 });
-btnSearch.addEventListener("click", handleClickBtnSearch);
 
 let allAnimes = [];
 
 function renderOneAnime(oneAnime) {
+  let imageUrl;
+
+  if (oneAnime.images && oneAnime.images.jpg && oneAnime.images.jpg.image_url) {
+    imageUrl = oneAnime.images.jpg.image_url;
+  } else {
+    imageUrl = "https://placehold.co/210x300/ffffff/555555?text=TV";
+  }
   const html = `
 <li class="js_animeLi" data-gancho="${oneAnime.mal_id}">
   <h2 class="js_title">${oneAnime.title}</h2>
-  <img class="js_image" src="${oneAnime.images.jpg.image_url}" alt="imagen de anime" />
+  <img class="js_image" src="${imageUrl}" alt="imagen de anime" />
 </li>`;
   return html;
 }
