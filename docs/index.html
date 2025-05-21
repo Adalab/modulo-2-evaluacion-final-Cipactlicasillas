@@ -3,50 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Buscador de series CC</title>
+    <title>AniSeek</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
     
     <link rel="icon" href="./images/favicon.png" />
-    <link rel="stylesheet" href="./assets/index-8a28c512.css">
+    <link rel="stylesheet" href="./assets/index-f416a9d0.css">
   </head>
 
-  <body>
+  <body class="background">
     <div class="page">
       <header>
-  <h1 class="link__adalab page__header">Buscador de series de Anime</h1>
+  <h1 class="page__header">AniSeek</h1>
 </header>
 
       <main class="main background">
   <aside class="sidebar">
-    <form action="/signup" method="get">
+    <form class="searcher" action="/signup" method="get">
       <input
-        class="js_searcher"
+        class="js_searcher searcherGen"
         placeholder="Buscar serie"
         id="Buscar"
         type="text"
       />
-      <input type="submit" value="Buscar" class="js_btn_search" />
-      <button class="js_btn_reset">Reset</button>
+      <input type="submit" value="Buscar" class="js_btn_search btnSearch" />
+
+      <button class="js_btn_reset btnReset">Reset</button>
     </form>
 
     <section class="favouriteSection">
-      <h2 class="title">Mis favoritas</h2>
+      <h2 class="title title--highlight">Mis favoritas</h2>
       <ul class="js_favouritesUl anime__list"></ul>
     </section>
   </aside>
 
   <section class="listingSection">
-    <h2 class="title">Listado de todas las series</h2>
+    <h2 class="title title--accented">Listado de todas las series</h2>
     <ul id="animeUl" class="js_animeUl"></ul>
     <ul class="js_anime_listUl anime__list"></ul>
   </section>
 </main>
 
       <footer>
-  <p class="page__footer">Promoción 53, 2025</p>
+  <p class="page__footer">© Aniseek - 2025</p>
 </footer>
 
     </div>
